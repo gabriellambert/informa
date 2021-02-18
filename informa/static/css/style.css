@@ -1,0 +1,58 @@
+.card-largura {
+    max-width: 20rem;
+    max-height: 22rem;
+    border: none;
+}
+
+.imagem-carrossel {
+    object-fit: cover;
+    height: 400px;
+}
+
+.imagem-noticia {
+    max-width: 50rem;
+}
+
+.fonte-titulo {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.cor-especial {
+    color: #0e181c;
+}
+
+.botao-cor-especial {
+    background-color: #0e181c;
+    color: white;
+}
+
+.imagem-card {
+    object-fit: cover;
+    height: 200px;
+}
+
+.imagem-card-seis {
+    object-fit: cover;
+    object-position: 0 75%;
+    height: 200px;
+}
+
+.logo {
+    width: 4.5%;
+}
+
+.card-noticia {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-noticia:hover {
+    text-decoration: none;
+    color: gray;
+}
+
+.botao-voltar {
+    padding-top: 10px;
+    text-decoration: none;
+    float: right;
+}
