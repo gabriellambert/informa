@@ -1,39 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Notícia</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="static/img/favicon.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-
-<body>
-
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default navbar-static-top">
-        <a class="navbar-brand fonte-titulo cor-especial" href="#">
-            <img src="static/img/icon.png" alt="" width="30" height="30">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-            <ul class="navbar-nav">
-                <li><a class="nav-item nav-link active" href="#">início <span class="sr-only">(current)</span></a></li>
-                <li><a class="nav-item nav-link"  href="#">noticias</a></li>
-                <li><a class="nav-item nav-link" data-toggle="modal" data-target="#modal-contato" href="#">contato</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+{% extends 'base/html' %}
+{% load static %}
+{% block content %}
 
 <div class="w3-row-padding w3-padding-64 w3-container">
     <div class="w3-content">
@@ -63,8 +30,4 @@
     </div>
 </div>
 
-<footer class="bg-secondary p-3 mt-5 ">
-    <p class="text-light m-0 text-center" >contato:<a class="text-light" href="mailto:contato@jornalinforma.com.br">contato@jornalinforma.com.br</a></p>
-</footer>
-</body>
-</html>
+{% endblock %}
