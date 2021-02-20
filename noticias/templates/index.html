@@ -21,65 +21,30 @@
         <p class="text-center text-secondary pb-5">Tudo sobre política, cultura, tecnologia e esportes</p>
     </section>
 
+    {% if noticias %}
     <section class="container-fluid bg-light" id="noticias">
         <div class="row justify-content-center">
 
-            <a href="#" class="card card-noticia card-largura p-0 m-4 col-12 col-md-4 col-xl-4">
-                <img src="{% static 'img/imagem_padrao.png' %}" class="card-img-top imagem-card" alt="...">
-                <div class="card-body">
-                    <footer class="card-text"><small class="text-muted">Assunto</small></footer>
-                    <p class="card-text pt-3">Aqui é o local da manchete da notícia. Deve ser bem escrita para que
-                        disperte a atenção do leitor.</p>
-                </div>
-            </a>
-
-            <a href="#" class="card card-noticia card-largura p-0 m-4 col-12 col-md-4 col-xl-4">
-                <img src="{% static 'img/imagem_padrao.png' %}" class="card-img-top imagem-card" alt="...">
-                <div class="card-body">
-                    <footer class="card-text"><small class="text-muted">Assunto</small></footer>
-                    <p class="card-text pt-3">Aqui é o local da manchete da notícia. Deve ser bem escrita para que
-                        disperte a atenção do leitor.</p>
-                </div>
-            </a>
-
-           <a href="#" class="card card-noticia card-largura p-0 m-4 col-12 col-md-4 col-xl-4">
-                <img src="{% static 'img/imagem_padrao.png' %}" class="card-img-top imagem-card" alt="...">
-                <div class="card-body">
-                    <footer class="card-text"><small class="text-muted">Assunto</small></footer>
-                    <p class="card-text pt-3">Aqui é o local da manchete da notícia. Deve ser bem escrita para que
-                        disperte a atenção do leitor.</p>
-                </div>
-           </a>
-
-            <a href="#" class="card card-noticia card-largura p-0 m-4 col-12 col-md-4 col-xl-4">
-                <img src="{% static 'img/imagem_padrao.png' %}" class="card-img-top imagem-card" alt="...">
-                <div class="card-body">
-                    <footer class="card-text"><small class="text-muted">Assunto</small></footer>
-                    <p class="card-text pt-3">Aqui é o local da manchete da notícia. Deve ser bem escrita para que
-                        disperte a atenção do leitor.</p>
-                </div>
-            </a>
-
-            <a href="#" class="card card-noticia card-largura p-0 m-4 col-12 col-md-4 col-xl-4">
-                <img src="{% static 'img/imagem_padrao.png' %}" class="card-img-top imagem-card" alt="...">
-                <div class="card-body">
-                    <footer class="card-text"><small class="text-muted">Assunto</small></footer>
-                    <p class="card-text pt-3">Aqui é o local da manchete da notícia. Deve ser bem escrita para que
-                        disperte a atenção do leitor.</p>
-                </div>
-            </a>
-
-            <a href="#" class="card card-noticia card-largura p-0 m-4 col-12 col-md-4 col-xl-4">
-                <img src="{% static 'img/imagem_padrao.png' %}" class="card-img-top imagem-card" alt="...">
-                <div class="card-body">
-                    <footer class="card-text"><small class="text-muted">Assunto</small></footer>
-                    <p class="card-text pt-3">Aqui é o local da manchete da notícia. Deve ser bem escrita para que
-                        disperte a atenção do leitor.</p>
-                </div>
-            </a>
-
+            {% for noticia in noticias %}
+                <a href="#" class="card card-noticia card-largura p-0 m-4 col-12 col-md-4 col-xl-4">
+                    {% if noticia.imagem == '' %}
+                        <img src="{% static 'img/imagem_padrao.png' %}" class="card-img-top imagem-card" alt="...">
+                    {% else %}
+                        <img src="{{ noticia.imagem.url }}" class="car-img top imagem-card" alt="...">
+                    {% endif %}
+                    <div class="card-body">
+                    <footer class="card-text"><small class="text-muted">{{noticia.categoria}}</small></footer>
+                    <p class="card-text pt-3">{{ noticia.titulo }}</p>
+                    </div>
+                </a>
+            {% endfor %}
         </div>
     </section>
+    {% else %}
+        <div class="container-fluid">
+            <p>Não há notícias cadastradas</p>
+        </div>
+    {% endif %}
 </main>
 
 {% endblock %}
